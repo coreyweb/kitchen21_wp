@@ -1,32 +1,3 @@
-<title>
-  <?php
-    // generate optimized title for html <title> and og:title meta
-			
-    if (is_page('Home')) {
-      echo bloginfo( 'name' ) .' | ' . get_bloginfo( 'description', 'display' ) . '';
-    } elseif (is_page('archives')) {
-      echo bloginfo( 'name' ) . ' Archives';
-    } else {
-      wp_title('|', true, 'right');
-    }
-    if ( is_author() ) {
-      echo ' - Contributor';
-    } elseif ( is_tag() ) {
-      echo ' articles on ' . bloginfo( 'name' );
-    } elseif ( is_category() ) {
-      echo bloginfo( 'name' );
-    } elseif ( is_singular() ) {
-      echo bloginfo( 'name' );
-    } elseif (is_attachment()) {
-          echo ' - Attachment';
-    }
-    if ($paged > 1) {
-      echo (' - Page ');
-      echo ($paged);
-    } // avoid dupe titles in category list pages
-  ?>  
-</title>
-
 <?php if ( is_attachment() ) { ?>
   <meta name="robots" content="noindex, nofollow" />
 <?php } ?>
