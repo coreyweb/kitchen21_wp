@@ -30,64 +30,99 @@ get_header(); ?>
             </div><!-- .col-sm-3 -->
             <div class="col-md-9">
               <div class="grid">
+                
+                <?php 
+                // show the first item in Menus custom post type
+                  query_posts(
+                    array(
+                      'post_type' => 'menus',
+                      'orderby' => 'menu_order',
+                      'order' => 'ASC',
+                      'showposts' => 1,
+                      'post_status' => 'publish'
+                    )
+                  );
+
+                  if ( have_posts() ) : while ( have_posts() ) : the_post();
+                ?>
+                
                 <div class="item item-heading">
-                  <a href="#">
-                    <img src="assets/imgs/grid/boardwalk-vine.jpg" alt="Boardwalk <span>&amp; Vine</span> image" class="img-responsive hidden-xs">
-                    <img src="assets/imgs/grid/boardwalk-vine-sq.jpg" alt="Boardwalk <span>&amp; Vine</span> image" class="img-responsive visible-xs">
+                  <a href="<?php the_permalink(); ?>">
+                    <img src="<?php vt_resize(get_the_ID(), 1600, 378, true) ?>" alt="<?php the_title() ?> image" class="img-responsive hidden-xs">
+                    <img src="<?php vt_resize(get_the_ID(), 500, 500, true) ?>" alt="<?php the_title() ?> image" class="img-responsive visible-xs">
                     <div class="item-copy">
-                      <h3>Boardwalk <span>&amp; Vine</span></h3>
+                      <h3>
+                        <?php 
+                          if ( get_post_meta($post->ID, 'special_title', true) ) : 
+
+                            echo get_post_meta($post->ID, 'special_title', true); // show special title, if it exists
+                      
+                            else : 
+
+                              the_title(); // if no special title exists, show the default one
+
+                          endif; 
+                        ?>
+                      </h3>
                     </div><!-- .item-copy -->
                   </a>
-                </div><!-- .item -->          
+                </div><!-- .item --> 
+                
+                <?php
+                    endwhile; 
+                  endif; 
+                  wp_reset_query();
+                ?>
+                    
                 <div class="row row-tight">
+
+                  <?php 
+                  // show the next 4 items in Menus custom post type
+                    query_posts(
+                      array(
+                        'post_type' => 'menus',
+                        'orderby' => 'menu_order',
+                        'order' => 'ASC',
+                        'showposts' => 4,
+                        'offset' => 1,
+                        'post_status' => 'publish'
+                      )
+                    );
+
+                    if ( have_posts() ) : while ( have_posts() ) : the_post();
+                  ?>
+
                   <div class="col-sm-6">
                     <div class="item ">
-                      <a href="#">
-                        <img src="assets/imgs/grid/clams.jpg" alt="Community <span>Clam Bar</span> image" class="img-responsive hidden-xs">
-                        <img src="assets/imgs/grid/clams-sq.jpg" alt="Community <span>Clam Bar</span> image" class="img-responsive visible-xs">
+                      <a href="<?php the_permalink() ?>">
+                        <img src="<?php vt_resize(get_the_ID(), 858, 540, true) ?>" alt="<?php the_title() ?> image" class="img-responsive hidden-xs">
+                        <img src="<?php vt_resize(get_the_ID(), 500, 500, true) ?>" alt="<?php the_title() ?> image" class="img-responsive visible-xs">
                         <div class="item-copy">
-                          <h3>Community <span>Clam Bar</span></h3>    
-                          <p>Meet new people over our raw-bar-in-a-box</p>    
+                          <h3>
+                            <?php 
+                              if ( get_post_meta($post->ID, 'special_title', true) ) : 
+
+                                echo get_post_meta($post->ID, 'special_title', true); // show special title, if it exists
+                      
+                                else : 
+
+                                  the_title(); // if no special title exists, show the default one
+
+                              endif; 
+                            ?>
+                          </h3>    
+                          <p><?php echo(get_the_excerpt()); ?></p>    
                         </div><!-- .item-copy -->
                       </a>
                     </div><!-- .item -->          
                   </div><!-- .col-sm-6 -->
-                  <div class="col-sm-6">
-                    <div class="item ">
-                      <a href="#">
-                        <img src="assets/imgs/grid/clams.jpg" alt="The Test <span>Kitchen</span> image" class="img-responsive hidden-xs">
-                        <img src="assets/imgs/grid/clams-sq.jpg" alt="The Test <span>Kitchen</span> image" class="img-responsive visible-xs">
-                        <div class="item-copy">
-                          <h3>The Test <span>Kitchen</span></h3>
-                          <p>Sit down with friends to experience the latest in food and wine trends</p>    
-                        </div><!-- .item-copy -->
-                      </a>
-                    </div><!-- .item -->
-                  </div><!-- .col-sm-6 -->
-                  <div class="col-sm-6">
-                    <div class="item ">
-                      <a href="#">
-                        <img src="assets/imgs/grid/clams.jpg" alt="The Cafe image" class="img-responsive hidden-xs">
-                        <img src="assets/imgs/grid/clams-sq.jpg" alt="The Cafe image" class="img-responsive visible-xs">
-                        <div class="item-copy">
-                          <h3>The Cafe</h3>
-                          <p>Grab a bite and return to the action on the beach</p>    
-                        </div><!-- .item-copy -->
-                      </a>
-                    </div><!-- .item -->          
-                  </div><!-- .col-sm-6 -->
-                  <div class="col-sm-6">
-                    <div class="item ">
-                      <a href="#">
-                        <img src="assets/imgs/grid/clams.jpg" alt="Parachute Bar image" class="img-responsive hidden-xs">
-                        <img src="assets/imgs/grid/clams-sq.jpg" alt="Parachute Bar image" class="img-responsive visible-xs">
-                        <div class="item-copy">
-                          <h3>Parachute Bar</h3>
-                          <p>Try one of 64 different beers on tap</p>    
-                        </div><!-- .item-copy -->
-                      </a>
-                    </div><!-- .item -->
-                  </div><!-- .col-sm-6 -->
+
+                  <?php
+                      endwhile; 
+                    endif; 
+                    wp_reset_query();
+                  ?>
+
                 </div><!-- .row -->
               </div><!-- .grid -->
             </div><!-- .col-sm-8 -->
