@@ -33,7 +33,6 @@
     </h4>
     
     <h1><?php the_title() ?></h1>
-    <?php get_template_part('template-parts/social', 'share-bar'); ?>
   </header><!-- .entry-header -->
 
   <div class="entry-content">
@@ -49,10 +48,6 @@
   </div><!-- .entry-content -->
 
   <footer class="entry-footer">
-    <?php get_template_part('template-parts/social', 'share-bar'); ?>
-
-    <?php get_template_part('template-parts/content', 'related'); ?>
-
     <div class="comments-wrap">
       <h3 class="heading-light">Comments</h3>
       <?php
