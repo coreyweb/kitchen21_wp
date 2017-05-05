@@ -76,9 +76,6 @@ add_action( 'after_setup_theme', 'Kitchen21_setup' );
 // turn off toolbar for logged in visitors and admins
   add_filter( 'show_admin_bar', '__return_false' );
 
-// Convert nav walker to Bootstrap compatabile (dropdowns)
-  // require_once('wp_bootstrap_navwalker.php');
-
 // Include Mailchimp API functionality
   require_once('lib/mailchimp/mailchimp.php' );
   
