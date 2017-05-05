@@ -9,9 +9,6 @@
 
 get_header(); ?>
 
-<!-- BEGIN STATIC -->
-
-      <div class="container-fluid">
         <div class="block">
           <div class="row">
             <div class="col-md-3">
@@ -147,7 +144,6 @@ get_header(); ?>
             </div><!-- .col-sm-6 -->
           </div><!-- .row -->
         </div><!-- .block -->
-      </div><!-- .container-fluid -->
 
 <?php
 // get_sidebar();
