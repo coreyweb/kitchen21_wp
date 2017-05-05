@@ -55,10 +55,7 @@ add_action( 'after_setup_theme', 'Kitchen21_setup' );
   require ( get_template_directory() . '/inc/functions/category-rules.php' );
 
 // Shortcodes
-  // require( get_template_directory() . '/plugins/tweaked-shortcode-ui/shortcode-ui.php' );
-  // require( get_template_directory() . '/inc/shortcodes/gallery-shortcode.php' );
-  // require( get_template_directory() . '/inc/shortcodes/shortcake-photogrid-shortcode.php' );
-  // require( get_template_directory() . '/inc/shortcodes/shortcake-recipe-shortcode.php' );
+  require( get_template_directory() . '/inc/shortcodes/gallery-shortcode.php' );
   
 // Image management ---------------------------------------------------------
   require( get_template_directory() . '/inc/functions/image_management.php' );
