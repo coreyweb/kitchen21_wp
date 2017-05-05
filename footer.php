@@ -14,15 +14,49 @@
     </div><!-- .content -->
   </main>
 
+  <?php 
+    query_posts(
+      array(
+        'post_type' => 'contact_info',
+        'orderby' => 'menu_order',
+        'order'   => 'ASC',
+        'showposts' => 1
+      )
+    );
+
+    if ( have_posts() ) : while ( have_posts() ) : the_post();
+    ?>
+
   <footer id="footer">
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-9">
           <div class="location-details">
-            3051 W. 21st Street Brooklyn, NY 11224 
-            <span><a href="tel:718-954-9801">718-954-9801</a></span>
-            <span>Monday – Sunday: 11 AM – 11 PM</span>
-            <span class="cafe">* Café is open for breakfast everyday starting at 9 AM</span>
+            
+            <?php
+              if ( get_post_meta($post->ID, 'restaurant_address', true) ) :
+                echo get_post_meta($post->ID, 'restaurant_address', true);
+              endif; 
+            ?>
+            
+            <?php if ( get_post_meta($post->ID, 'phone_number', true) ) : ?>
+            
+            <span><a href="tel:<?php echo get_post_meta($post->ID, 'phone_number', true) ?>"><?php echo get_post_meta($post->ID, 'phone_number', true) ?></a></span>
+
+            <?php endif; ?>
+
+            <?php if ( get_post_meta($post->ID, 'hours', true) ) : ?>
+            
+            <span><?php echo get_post_meta($post->ID, 'hours', true); ?></span>
+            
+            <?php endif; ?>
+            
+            <?php if ( get_post_meta($post->ID, 'cafe_hours', true) ) : ?>
+              
+            <span class="cafe">* <?php echo get_post_meta($post->ID, 'cafe_hours', true); ?></span>
+
+            <?php endif; ?>
+
           </div>
           <div class="row">
             <div class="col-md-7 col-md-offset-0 col-sm-8 col-sm-offset-2">
@@ -39,21 +73,44 @@
         </div><!-- .col-md-7 -->
         <div class="col-md-3">
           <div class="social-share">
+
             <a href="#">Email Us</a>
-            <a href="#" class="icon-facebook">
+            
+            <?php if ( get_post_meta($post->ID, 'facebook_link', true) ) : ?>
+            
+            <a href="<?php echo get_post_meta($post->ID, 'facebook_link', true) ?>" class="icon-facebook">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-facebook"></use></svg>
             </a>
-            <a href="#" class="icon-twitter">
+            
+            <?php endif; ?>
+
+            <?php if ( get_post_meta($post->ID, 'twitter_link', true) ) : ?>
+            
+            <a href="<?php echo get_post_meta($post->ID, 'twitter_link', true) ?>" class="icon-twitter">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-twitter"></use></svg>
             </a>
-            <a href="#" class="icon-instagram">
+            
+            <?php endif; ?>
+
+            <?php if ( get_post_meta($post->ID, 'instagram_link', true) ) : ?>
+            
+            <a href="<?php echo get_post_meta($post->ID, 'instagram_link', true) ?>" class="icon-instagram">
               <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-instagram"></use></svg>
             </a>
+            
+            <?php endif; ?>
+
           </div><!-- .social-share -->
         </div><!-- .col-md-5 -->
       </div><!-- .row -->
     </div><!-- .container-fluid -->
   </footer><!-- #footer -->
+  
+  <?php
+      endwhile;
+    endif;
+    wp_reset_query();
+  ?>
 </div><!-- #page -->
 
 <div class="menu-backdrop"></div>
