@@ -74,8 +74,13 @@
         <div class="col-md-3">
           <div class="social-share">
 
-            <a href="#">Email Us</a>
             
+            <?php if ( get_post_meta($post->ID, 'email_address', true) ) : ?>
+
+            <a href="mailto:<?php echo get_post_meta($post->ID, 'email_address', true) ?>">Email Us</a>
+            
+            <?php endif; ?>
+
             <?php if ( get_post_meta($post->ID, 'facebook_link', true) ) : ?>
             
             <a href="<?php echo get_post_meta($post->ID, 'facebook_link', true) ?>" class="icon-facebook">
