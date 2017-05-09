@@ -9,17 +9,32 @@
 
 get_header(); ?>
 
-        <div class="block">
-          <div class="row">
-            <div class="col-xs-12">
-              <h1><?php the_title() ?></h1>
-              <?php the_content() ?>
-              
-              <?php get_template_part( 'template-parts/grid', 'menus-main' ); ?>
+    <article class="page">
+      <div class="shelf-header ">
+        <h1>
+          <?php the_title() ?>
+        </h1>
+        <img src="<?php vt_resize(get_the_ID(), 1200, 284, true) ?>" alt="About Kitchen 21 image" class="img-responsive hidden-xs">
+        <img src="<?php vt_resize(get_the_ID(), 767, 587, true) ?>" alt="About Kitchen 21 image" class="img-responsive visible-xs">
+      </div><!-- .shelf-header -->
 
-            </div><!-- .col-xs-12 -->
-          </div><!-- .row -->
-        </div><!-- .block -->
+      <?php
+        while ( have_posts() ) : the_post();
+
+          get_template_part( 'template-parts/content', 'page' );
+
+        endwhile; // End of the loop.
+      ?>
+      
+    </article><!-- .page -->
+      
+    <div class="block">
+      <div class="grid">
+
+        <?php get_template_part( 'template-parts/grid', 'menus-main' ); ?>
+
+      </div><!-- .grid -->
+    </div><!-- .block -->
 
 <?php
 // get_sidebar();
