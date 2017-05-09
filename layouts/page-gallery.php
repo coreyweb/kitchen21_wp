@@ -28,18 +28,22 @@ get_header(); ?>
         </div>
         <div class="col-sm-6">
           <div class="gallery-item">
-            <img src="https://placeholdit.imgix.net/~text?w=767&h=432&bg=111111" alt="Gallery Item 1" class="img-responsive">
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="gallery-item">
-            <img src="https://placeholdit.imgix.net/~text?w=767&h=432&bg=111111" alt="Gallery Item 1" class="img-responsive">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/nam90gorcPs?rel=0&showinfo=0" allowfullscreen class="embed-responsive-item"></iframe>
+            </div>
           </div>
         </div>
         <div class="col-sm-6">
           <div class="gallery-item">
             <div class="embed-responsive embed-responsive-16by9">
               <iframe src="https://www.youtube.com/embed/nam90gorcPs?rel=0&showinfo=0" allowfullscreen class="embed-responsive-item"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="gallery-item">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe src="https://www.youtube.com/embed/sCGuSqBjhfE?rel=0&showinfo=0" allowfullscreen class="embed-responsive-item"></iframe>
             </div>
           </div>
         </div>
