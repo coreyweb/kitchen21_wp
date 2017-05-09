@@ -37,5 +37,4 @@ get_header(); ?>
     </div><!-- .block -->
 
 <?php
-// get_sidebar();
 get_footer();
