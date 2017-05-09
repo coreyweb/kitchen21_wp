@@ -79,7 +79,7 @@ function carousel_shortcode($attr) {
     $output .= '  </ol>';
     $output .= '  <div class="carousel-inner" role="listbox">'; 
 		$size = 'full';
-
+    
     //Begin counting slides to set the first one as the active class
     $counter = 0;
     foreach ($attachments as $id => $attachment) {
@@ -89,7 +89,7 @@ function carousel_shortcode($attr) {
       $image_src_url = wp_get_attachment_image_src($id, $size);
       if ( $counter == '0' ) { $active = ' active'; } else { $active = ''; }      
       $output .= '<div class="item' . $active . '">';
-      $output .= '  <img src="' . $image_src_url[0] . '" alt="'. $image_alt . '">';
+      $output .= '  <img src="' . ( get_vt_resize( $id, 1200, 675, true )['url'] ) . '" alt="'. $image_alt . '">';
       $output .= '</div><!-- .item -->';
       $counter++;
     }
