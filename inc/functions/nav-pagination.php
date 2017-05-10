@@ -36,8 +36,6 @@
     echo paginate_links( $pagination );
 };
 
-
-
 // Determine if there's pagination on category/archive pages
 function show_posts_nav() {
     global $wp_query;

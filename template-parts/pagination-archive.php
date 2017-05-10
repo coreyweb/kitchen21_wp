@@ -13,7 +13,7 @@
 
   <div class="pagination-wrap">
     <div class="pagination">
-      <?php pagination('&larr; Prev', 'Next &rarr;'); ?>
+      <?php posts_nav_link('&#8734;','&lsaquo; Newer Posts','Older Posts &rsaquo;'); ?>
     </div><!-- .pagination -->
   </div><!-- .pagination-wrap -->
 
