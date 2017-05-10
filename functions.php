@@ -68,7 +68,6 @@ add_action( 'after_setup_theme', 'Kitchen21_setup' );
   require( get_template_directory() . '/inc/functions/comment_notifications.php' );
 	require( get_template_directory() . '/inc/functions/no-pingback.php' );
 	require( get_template_directory() . '/inc/functions/nav-pagination.php' );
-  require get_template_directory() . '/inc/functions/class-featured-post.php'; // Show featured story box in post admin
 
 // turn off toolbar for logged in visitors and admins
   add_filter( 'show_admin_bar', '__return_false' );
