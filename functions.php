@@ -145,3 +145,9 @@ function current_type_nav_class($classes, $item) {
 function get_current_value( $element ) {
     return ( $element != "current_page_parent" );
 }
+
+// hide Pods Shortcode button from editors
+add_action( 'admin_init', 'remove_pods_shortcode_button', 14 );
+function remove_pods_shortcode_button () {
+    remove_action( 'media_buttons', array( PodsInit::$admin, 'media_button' ), 12 );
+}
