@@ -9,14 +9,23 @@
 
 ?>
     <article class="page">
+      <?php if ( has_post_thumbnail() ) : ?>
+
       <div class="shelf-header ">
-        <h1>
-          <?php the_title() ?>
-        </h1>
+        <h1><?php the_title() ?></h1>
+        
+
         <img src="<?php vt_resize(get_the_ID(), 1200, 284, true) ?>" alt="<?php the_title() ?> image" class="img-responsive hidden-xs">
         <img src="<?php vt_resize(get_the_ID(), 767, 587, true) ?>" alt="<?php the_title() ?> image" class="img-responsive visible-xs">
+
       </div><!-- .shelf-header -->
 
+    <?php else : ?>
+
+      <h1 class="heading-alone"><?php the_title() ?></h1>
+
+    <?php endif; ?>
+        
       <?php
         the_content();
       ?>
