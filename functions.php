@@ -151,3 +151,19 @@ add_action( 'admin_init', 'remove_pods_shortcode_button', 14 );
 function remove_pods_shortcode_button () {
     remove_action( 'media_buttons', array( PodsInit::$admin, 'media_button' ), 12 );
 }
+
+
+// Disable "Add New" on Work Featured Image CPT
+function disable_new_posts() {
+// Hide sidebar link
+global $submenu;
+unset($submenu['edit.php?post_type=contact_info'][10]);
+
+// Hide link on listing page
+if (isset($_GET['post_type']) && $_GET['post_type'] == 'contact_info') {
+    echo '<style type="text/css">
+    #favorite-actions, .add-new-h2, .tablenav, .page-title-action { display:none; }
+    </style>';
+}
+}
+add_action('admin_menu', 'disable_new_posts');
