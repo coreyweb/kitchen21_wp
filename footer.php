@@ -60,6 +60,8 @@
           </div>
           <div class="row">
             <div class="col-md-7 col-md-offset-0 col-sm-8 col-sm-offset-2">
+              <?php /* HIDE SUBSCRIBE FOR LAUNCH
+              
               <form action="#">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="enter email address">
@@ -68,6 +70,9 @@
                   </span>
                 </div><!-- .input-group -->
               </form>
+              
+              
+              */ ?>
             </div><!-- .col-sm-4 -->
           </div><!-- .row -->
         </div><!-- .col-md-7 -->
@@ -119,6 +124,32 @@
 </div><!-- #page -->
 
 <div class="menu-backdrop"></div>
+
+<script type='application/ld+json'> 
+{
+  "@context": "http://www.schema.org",
+  "@type": "Restaurant",
+  "name": "Kitchen 21",
+  "url": "http://kitchen-21.com/",
+  "image": "http://kitchen-21.com/schema/kitchen-21-logo.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3052 W 21st Street",
+    "addressLocality": "Brooklyn",
+    "addressRegion": "NY",
+    "postalCode": "11224",
+    "addressCountry": "United States"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.572567",
+    "longitude": "-73.987455"
+  },
+  "hasMap": "https://www.google.com/maps/place/3052+W+21st+St,+Brooklyn,+NY+11224/@40.572891,-73.9897367,17z/data=!4m13!1m7!3m6!1s0x89c245cbf4edf861:0x8ce1ac27d8c4c3c6!2s3052+W+21st+St,+Brooklyn,+NY+11224!3b1!8m2!3d40.572891!4d-73.987548!3m4!1s0x89c245cbf4edf861:0x8ce1ac27d8c4c3c6!8m2!3d40.572891!4d-73.987548",
+  "openingHours": "Mo, Tu, We, Th, Fr, Sa, Su 11:00-23:00",
+  "telephone": "+1-718-954-9801"
+}
+ </script>
 
 <?php wp_footer(); ?>
 
