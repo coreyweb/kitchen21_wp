@@ -19,7 +19,7 @@ get_header(); ?>
 
         <?php if ( has_post_thumbnail() ) : ?>
 
-        <img src="<?php vt_resize(get_the_ID(), 1000, 300, true) ?>" alt="<?php the_title() ?> image" class="img-responsive hidden-xs">
+        <img src="<?php vt_resize(get_the_ID(), 1500, 450, true) ?>" alt="<?php the_title() ?> image" class="img-responsive hidden-xs">
         <img src="<?php vt_resize(get_the_ID(), 767, 767, true) ?>" alt="<?php the_title() ?> image" class="img-responsive visible-xs">
 
         <?php endif; ?>
