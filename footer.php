@@ -140,6 +140,8 @@
     "postalCode": "11224",
     "addressCountry": "United States"
   },
+  "priceRange": "$$",
+  "servesCuisine": "Seafood, American",
   "geo": {
     "@type": "GeoCoordinates",
     "latitude": "40.572567",
