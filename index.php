@@ -16,14 +16,14 @@ get_header(); ?>
   
   <div class="shelf-header ">
 
-    <h1>
-      <?php bloginfo( 'name' ); ?> Blog
-    </h1>
+    <div class="shelf-header ">
+      <h1><?php bloginfo( 'name' ); ?> Blog</h1>
 
-    <img src="/wp/wp-content/uploads/2017/05/shelf-header-about-1200x284.jpg" alt="About Kitchen 21 image" class="img-responsive hidden-xs">
-    <img src="/wp/wp-content/uploads/2017/05/shelf-header-about-767x587.jpg" alt="About Kitchen 21 image" class="img-responsive visible-xs">
+      <img src="<?php vt_resize(24, 1200, 284, true) ?>" alt="<?php bloginfo( 'name' ); ?> Blog image" class="img-responsive hidden-xs">
+      <img src="<?php vt_resize(24, 767, 587, true) ?>" alt="<?php bloginfo( 'name' ); ?> Blog image" class="img-responsive visible-xs">
+
+    </div><!-- .shelf-header -->
         
-  </div><!-- .shelf-header -->
   
   <?php
   	if ( have_posts() ) :

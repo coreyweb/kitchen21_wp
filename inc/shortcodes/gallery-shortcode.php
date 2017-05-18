@@ -69,14 +69,6 @@ function carousel_shortcode($attr) {
 
     //Output Begins Here
     $output = '<div id="carousel-gallery" class="carousel slide" data-ride="carousel">';
-    $output .= '  <ol class="carousel-indicators">';
-    $indicator = 0;
-    foreach ($attachments as $id => $attachment) {
-      if ( $indicator == '0' ) { $active_indicator = ' class="active"'; } else { $active_indicator = ''; }      
-      $output .= '    <li data-target="#carousel-gallery" data-slide-to="' . $indicator . '"' . $active_indicator . '></li>';
-      $indicator++;      
-    }
-    $output .= '  </ol>';
     $output .= '  <div class="carousel-inner" role="listbox">'; 
 		$size = 'full';
     
@@ -95,6 +87,14 @@ function carousel_shortcode($attr) {
     }
 
     $output .= '        </div><!-- .carousel-inner -->';
+    $output .= '        <a class="left carousel-control" href="#carousel-gallery" role="button" data-slide="prev">';
+    $output .= '          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-left"></use></svg>';
+    $output .= '          <span class="sr-only">Previous</span>';
+    $output .= '        </a>';
+    $output .= '        <a class="right carousel-control" href="#carousel-gallery" role="button" data-slide="next">';
+    $output .= '          <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-arrow-right"></use></svg>';
+    $output .= '          <span class="sr-only">Next</span>';
+    $output .= '        </a>';
     $output .= '      </div><!-- .carousel -->';
 
     return $output;
