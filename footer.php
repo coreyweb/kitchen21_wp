@@ -82,7 +82,7 @@
             
             <?php if ( get_post_meta($post->ID, 'email_address', true) ) : ?>
 
-            <a href="mailto:<?php echo get_post_meta($post->ID, 'email_address', true) ?>">Email Us</a>
+            <a href="mailto:<?php echo get_post_meta($post->ID, 'email_address', true) ?>">Contact Us</a>
             
             <?php endif; ?>
 
