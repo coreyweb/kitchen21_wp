@@ -25,24 +25,17 @@
                   if ( have_posts() ) : while ( have_posts() ) : the_post();
                 ?>
                 
-                <div class="item item-heading">
+                <div class="item">
                   <a href="<?php the_permalink(); ?>">
                     <img src="<?php vt_resize(get_the_ID(), 1600, 378, true) ?>" alt="<?php the_title() ?> image" class="img-responsive hidden-xs">
                     <img src="<?php vt_resize(get_the_ID(), 500, 500, true) ?>" alt="<?php the_title() ?> image" class="img-responsive visible-xs">
                     <div class="item-copy">
                       <h3>
                         <?php 
-                          if ( get_post_meta($post->ID, 'special_title', true) ) : 
-
-                            echo get_post_meta($post->ID, 'special_title', true); // show special title, if it exists
-                      
-                            else : 
-
-                              the_title(); // if no special title exists, show the default one
-
-                          endif; 
+                          the_title(); // if no special title exists, show the default one
                         ?>
                       </h3>
+                      <p><?php echo(get_the_excerpt()); ?></p>
                     </div><!-- .item-copy -->
                   </a>
                 </div><!-- .item --> 
