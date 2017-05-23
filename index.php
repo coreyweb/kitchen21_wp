@@ -38,6 +38,7 @@ get_header(); ?>
     <?php endif; ?>
 
     <?php the_content(); ?>
+    
   </article><!-- .post-link -->
 
   <?php 
@@ -51,8 +52,4 @@ get_header(); ?>
 
 	  get_template_part('template-parts/pagination', 'archive')
     
-  ?>
-
-
-<?php
 get_footer();

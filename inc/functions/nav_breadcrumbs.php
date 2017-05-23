@@ -106,4 +106,3 @@ if ( ! function_exists( 'custom_breadcrumbs' ) ) {
   echo wp_kses_post( $html );
   }
 }
-	

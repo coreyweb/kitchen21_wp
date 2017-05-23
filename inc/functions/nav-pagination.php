@@ -8,9 +8,7 @@
  */
 
 // Reference: http://codex.wordpress.org/Function_Reference/paginate_links
-?>
 
-<?php
 // Improved Category pagination (instead of previous and next)
 // Reference: http://codex.wordpress.org/Function_Reference/paginate_links
   function pagination($prev = 'Prev', $next = 'Next') {

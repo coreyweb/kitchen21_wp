@@ -15,9 +15,11 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
-  return;
-}
+
+  if ( post_password_required() ) {
+    return;
+  }
+
 ?>
 
 <div id="comments" class="comments-area">
@@ -56,7 +58,10 @@ if ( post_password_required() ) {
       ?>
     </ol><!-- .comment-list -->
 
-    <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+    <?php 
+      if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? 
+    ?>
+
     <nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
       <h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'Kitchen21' ); ?></h2>
       <div class="nav-links">
@@ -71,15 +76,17 @@ if ( post_password_required() ) {
 
   endif; // Check for have_comments().
 
-
   // If comments are closed and there are comments, let's leave a little note, shall we?
   if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
     <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'Kitchen21' ); ?></p>
-  <?php
-  endif;
 
-  comment_form();
+  <?php
+
+    endif;
+
+    comment_form();
+
   ?>
 
 </div><!-- #comments -->

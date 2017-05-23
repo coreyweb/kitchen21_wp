@@ -15,7 +15,6 @@ require( get_template_directory() . '/inc/functions/vt_resize.php' );
 //
 // add_image_size( 'hero', 1100, 446, true );
 
-
 // Remove width from inserted images
 add_shortcode( 'wp_caption', 'fixed_img_caption_shortcode' );
 add_shortcode( 'caption', 'fixed_img_caption_shortcode' );

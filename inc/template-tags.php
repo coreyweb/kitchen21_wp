@@ -93,4 +93,3 @@ function Kitchen21_categorized_blog() {
     return false;
   }
 }
-

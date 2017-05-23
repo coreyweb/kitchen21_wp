@@ -31,8 +31,6 @@ function load_cat_parent_template($template) {
 }
 add_action('category_template', 'load_cat_parent_template');
 
-
-
 // Set up logic to check if a post is in a subcategory
 if ( ! function_exists( 'post_is_in_descendant_category' ) ) {
   function post_is_in_descendant_category( $cats, $_post = null ) {

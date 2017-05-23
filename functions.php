@@ -164,6 +164,6 @@ if (isset($_GET['post_type']) && $_GET['post_type'] == 'contact_info') {
     echo '<style type="text/css">
     #favorite-actions, .add-new-h2, .tablenav, .page-title-action { display:none; }
     </style>';
-}
+  }
 }
 add_action('admin_menu', 'disable_new_posts');

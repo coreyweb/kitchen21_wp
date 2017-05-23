@@ -7,15 +7,12 @@
  * @package Kitchen21
  */
 
-get_header(); ?>
-  
-	<?php
+get_header(); 
+
   	while ( have_posts() ) : the_post();
 
   	  get_template_part( 'template-parts/content', 'single' );
 
   	endwhile; // End of the loop.
-	?>
 
-<?php
 get_footer();
