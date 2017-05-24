@@ -50,6 +50,6 @@ get_header(); ?>
 
   	endif; 
 
-	  get_template_part('template-parts/pagination', 'archive')
+    // get_template_part('template-parts/pagination', 'archive')
     
 get_footer();
